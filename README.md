@@ -1,8 +1,8 @@
 # GroupMeetingTime_ZhangLab
-ZhangLab组会时间数据库；
-所有组会时间数据在meeting_times.db中；
-运行average.py可以得到平均时间排名；
-运行add.py可以添加信息，delete.py可以删除信息，sort.py按照时间顺序重新排列
+ZhangLab组会时间数据库；  
+所有组会时间数据在meeting_times.db中；  
+运行average.py可以得到平均时间排名；  
+运行add.py可以添加信息，delete.py可以删除信息，sort.py按照时间顺序重新排列  
 
 ## 2024年上半学期排名
 | Name | Average Duration | Count |
