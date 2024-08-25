@@ -14,7 +14,9 @@ CREATE TABLE IF NOT EXISTS meeting_times (
     date TEXT NOT NULL,
     start_time TEXT NOT NULL,
     end_time TEXT NOT NULL,
-    duration TEXT NOT NULL
+    duration TEXT NOT NULL,
+    question_time TEXT,
+    question_duration TEXT
 )
 ''')
 
@@ -49,7 +51,7 @@ class MeetingApp:
         self.meeting_listbox.delete(0, END)  # 清空Listbox
         meetings = get_all_meetings()
         for meeting in meetings:
-            self.meeting_listbox.insert(END, f"ID: {meeting[0]}, Name: {meeting[1]}, Date: {meeting[2]}, Start Time: {meeting[3]}, End Time: {meeting[4]}, Duration: {meeting[5]}")
+            self.meeting_listbox.insert(END, f"ID: {meeting[0]}, Name: {meeting[1]}, Date: {meeting[2]}, Start Time: {meeting[3]}, End Time: {meeting[4]}, Duration: {meeting[5]}, Question Time: {meeting[6]}, Question Duration: {meeting[7]}")
 
     def delete_selected_meeting(self):
         selected_index = self.meeting_listbox.curselection()
