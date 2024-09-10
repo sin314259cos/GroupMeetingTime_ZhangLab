@@ -51,27 +51,27 @@ class MeetingApp:
         self.root.title("Meeting Time Tracker")
 
         # 输入框
-        self.name_label = Label(root, text="Name")
+        self.name_label = Label(root, text="Name, e.g. zz")
         self.name_label.grid(row=0, column=0)
         self.name_entry = Entry(root)
         self.name_entry.grid(row=0, column=1)
 
-        self.date_label = Label(root, text="Date (MM-DD)")
+        self.date_label = Label(root, text="Date (MM-DD), e.g. 10-01")
         self.date_label.grid(row=1, column=0)
         self.date_entry = Entry(root)
         self.date_entry.grid(row=1, column=1)
 
-        self.start_time_label = Label(root, text="Start Time (HH:MM)")
+        self.start_time_label = Label(root, text="Start Time (HH:MM), e.g.18:00")
         self.start_time_label.grid(row=2, column=0)
         self.start_time_entry = Entry(root)
         self.start_time_entry.grid(row=2, column=1)
 
-        self.end_time_label = Label(root, text="End Time (HH:MM)")
+        self.end_time_label = Label(root, text="End Time (HH:MM), e.g.18:20")
         self.end_time_label.grid(row=3, column=0)
         self.end_time_entry = Entry(root)
         self.end_time_entry.grid(row=3, column=1)
 
-        self.question_time_label = Label(root, text="Question Time (HH:MM)")
+        self.question_time_label = Label(root, text="Question Time (HH:MM), e.g.18:40")
         self.question_time_label.grid(row=4, column=0)
         self.question_time_entry = Entry(root)
         self.question_time_entry.grid(row=4, column=1)
@@ -96,7 +96,7 @@ class MeetingApp:
 
     def clear_entries(self):
         self.name_entry.delete(0, END)
-        self.date_entry.delete(0, END)
+        # self.date_entry.delete(0, END)
         self.start_time_entry.delete(0, END)
         self.end_time_entry.delete(0, END)
         self.question_time_entry.delete(0, END)
