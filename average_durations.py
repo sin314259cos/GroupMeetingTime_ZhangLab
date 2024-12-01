@@ -8,7 +8,7 @@ cursor = conn.cursor()
 # 查询并计算每个人的平均duration和question_time
 def get_average_durations_and_question_times(start_date, end_date):
     cursor.execute('''
-    SELECT name,
+    SELECT name,COUNT(*) as count,
            AVG((julianday(end_time) - julianday(start_time)) * 24 * 60 * 60) AS avg_duration,
            AVG((julianday(question_time) - julianday(end_time)) * 24 * 60 * 60) AS avg_question_time
     FROM meeting_times
@@ -19,26 +19,26 @@ def get_average_durations_and_question_times(start_date, end_date):
 
 # 按duration排序
 def sort_by_duration(data):
-    return sorted(data, key=lambda x: x[1], reverse=True)
+    return sorted(data, key=lambda x: x[2], reverse=True)
 
 # 按duration + question_time排序
 def sort_by_total_time(data):
-    return sorted(data, key=lambda x: x[1] + x[2], reverse=True)
+    return sorted(data, key=lambda x: x[2] + x[3], reverse=True)
 
 # 打印结果
 def print_results(data, title):
     print(title)
     for row in data:
-        name, avg_duration, avg_question_time = row
+        name, count, avg_duration, avg_question_time = row
         avg_duration_td = timedelta(seconds=avg_duration)
         avg_question_time_td = timedelta(seconds=avg_question_time)
         avg_total_time_td = timedelta(seconds=avg_duration+ avg_question_time) 
-        print(f"Name: {name}, Average Duration: {avg_duration_td}, Average Question Time: {avg_question_time_td}, Average Question Time: {avg_total_time_td}")
+        print(f"Name: {name}, Average Duration: {avg_duration_td}, Average Question Time: {avg_question_time_td}, Average Total Time: {avg_total_time_td},count: {count}")
     print()
 
 # 主函数
 def main():
-    start_date = '2024-08-18'
+    start_date = '2024-08-25'
     end_date = '2024-12-01'
 
     data = get_average_durations_and_question_times(start_date, end_date)
