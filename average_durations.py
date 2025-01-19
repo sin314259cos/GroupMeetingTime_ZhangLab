@@ -36,10 +36,9 @@ def print_results(data, title):
         print(f"Name: {name}, Average Duration: {avg_duration_td}, Average Question Time: {avg_question_time_td}, Average Total Time: {avg_total_time_td},count: {count}")
     print()
 
-# 主函数
 def main():
     start_date = '2024-08-25'
-    end_date = '2024-12-09'
+    end_date = '2025-12-16'
 
     data = get_average_durations_and_question_times(start_date, end_date)
 
@@ -49,7 +48,6 @@ def main():
     print_results(sorted_by_duration, "Sorted by Average Duration")
     print_results(sorted_by_total_time, "Sorted by Average Duration + Question Time")
 
-# 执行主函数
 if __name__ == "__main__":
     main()
 

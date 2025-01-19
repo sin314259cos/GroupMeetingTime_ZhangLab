@@ -32,14 +32,14 @@ def insert_meeting(name, date, start_time, end_time, question_time):
     question_dt = datetime.strptime(question_time, '%H:%M')
     question_duration = question_dt - end_dt
 
-    # 将日期改为2024年
-    date_2024 = '2024-' + str(date)
+    # 将日期改为2025年
+    date_2025 = '2025-' + str(date)
 
     # 插入数据
     cursor.execute('''
     INSERT INTO meeting_times (name, date, start_time, end_time, duration, question_time, question_duration)
     VALUES (?, ?, ?, ?, ?, ?, ?)
-    ''', (name, date_2024, start_time, end_time, str(duration), question_time, str(question_duration)))
+    ''', (name, date_2025, start_time, end_time, str(duration), question_time, str(question_duration)))
 
     # 提交事务
     conn.commit()
