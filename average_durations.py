@@ -37,8 +37,8 @@ def print_results(data, title):
     print()
 
 def main():
-    start_date = '2025-08-25'
-    end_date = '2025-12-31'
+    start_date = '2025-09-01'
+    end_date = '2026-01-12'
 
     data = get_average_durations_and_question_times(start_date, end_date)
 

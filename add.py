@@ -32,8 +32,8 @@ def insert_meeting(name, date, start_time, end_time, question_time):
     question_dt = datetime.strptime(question_time, '%H:%M')
     question_duration = question_dt - end_dt
 
-    # 将日期改为2025年
-    date_2025 = '2025-' + str(date)
+    # 将日期改为2026年
+    date_2025 = '2026-' + str(date)
 
     # 插入数据
     cursor.execute('''
