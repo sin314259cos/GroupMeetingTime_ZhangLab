@@ -1,0 +1,5 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+meeting_times_backup_*.db
+meeting_times_*.csv
